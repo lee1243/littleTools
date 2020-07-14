@@ -1,10 +1,11 @@
-var beginDate = new Date("2020-05-06");//开始填写日期
-var totleNum = 2;//填写天数
-
+var beginDate = new Date("2020-06-19");//开始填写日期
+var totleNum = 6;//填写天数
+var i = 2;//工作内容描述
 
 //配置-----工作描述
 var descriptions = ['前台开发页面','后台逻辑开发','测试联调','缺陷修复'];
-var workDes = descriptions[1];
+i = i - 1;
+var workDes = descriptions[i];
 
 //------------------------上配置--------------------------------------
 //配置-----每日填写花费量
@@ -54,6 +55,7 @@ function singleFillBlank(){
 				var ifW = $("#tdialog-iframe").get(0).contentWindow;
 				$(ifW.document.getElementById("TimesheetSpentdate")).val(dateStr);
 				$(ifW.document.getElementById("TimesheetTimespent")).val(payDay);
+				$(ifW.document.getElementById("TimesheetTimespent")).keyup();
 				$(ifW.document.getElementById("TimesheetMemo")).val(workDes);
 				$("#tdialog-buttonwrap > a.btn.btn-primary > span").click();
 				num ++;
